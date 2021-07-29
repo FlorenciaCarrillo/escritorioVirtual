@@ -26,3 +26,24 @@ fetch ("http://api.weatherapi.com/v1/current.json?key=30bdfa813d494db08581091021
             //falta hacer el fondo responsive
             }
         
+
+//reloj
+
+const actualizarHora = () =>{
+    const time= new Date();
+    let hora = agregarCeros(time.getHours());
+    let minutos = agregarCeros(time.getMinutes());
+    let segundos = agregarCeros(time.getSeconds());
+    
+
+    document.querySelector(".hora").textContent = hora;
+    document.querySelector(".minutos").textContent = minutos;
+    document.querySelector(".segundos").textContent = segundos;
+}
+
+const agregarCeros = n => { 
+    if (n.toString().length < 2) return "0".concat(n);
+    return n;
+}
+    
+setInterval(actualizarHora,1000);

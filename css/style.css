@@ -1,7 +1,7 @@
 #textoClima{
     background-color: white;
     padding: 10px;
-    width: 15%;
+    width: 100%;
     opacity: 0.5;
     border-radius: 5px;
     margin: 10px;
@@ -30,3 +30,10 @@
 
 }
 
+#carouselnoticias{
+    border-radius: 20px 20px 20px 20px;
+    overflow: hidden;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.30);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.30);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.30);
+}

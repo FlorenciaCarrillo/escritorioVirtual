@@ -47,3 +47,45 @@ const agregarCeros = n => {
 }
     
 setInterval(actualizarHora,1000);
+
+var url = 'https://newsapi.org/v2/top-headlines?' +
+          'sources=bbc-news&' +
+          'apiKey=3871e612140c4b26b5148ee9d33415d8';
+var req = new Request(url);
+fetch(req)
+    .then (response => response.json())
+    .then (json => { 
+        
+        let news= json.articles;
+        console.log(news);
+        const slideContainer = document.getElementById("carouselnoticiasimagenes");
+        let listaSlides="";
+        for ( let i=0; i<news.length; i++) {
+            
+            const article=news[i];
+            let active="";
+            if(i===0){
+                
+                active="active";
+            }
+
+            let slideCarousel= `
+
+            <div class="carousel-item ${active}">
+            <img src="${article.urlToImage}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>${article.title}</h5>
+              <p>${article.description}</p>
+            </div>
+          </div>
+            `      
+            listaSlides+= slideCarousel;     
+            
+        }
+        console.log(listaSlides);
+        slideContainer.innerHTML= listaSlides;
+
+        
+
+       
+    })

@@ -11,15 +11,22 @@ fetch ("http://api.weatherapi.com/v1/current.json?key=30bdfa813d494db08581091021
         let sensacionTermica = json.current.feelslike_c;
         let condición= json.current.condition.text;
         let codigo= json.current.condition.code;
+        let esDia= json.current.is_day;
+        let icono= json.current.condition.icon;
 
         const textoClima = document.getElementById("textoClima");
-        textoClima.innerHTML=lugar + "</br>" + "T: " + temperatura + " °C " + "</br>" + " ST: " + sensacionTermica + "</br>" + condición;
+        textoClima.innerHTML=lugar + "</br>" + "T: " + temperatura + " °C " + "</br>" + " ST: " + sensacionTermica + "</br>" + condición + "<img src='" + icono + "' style='width: 100px;'></img>";
 
-        obtenerImagenSegunCondicion(codigo);
+        obtenerImagenSegunCondicion(codigo, esDia);
         })
 
-        function obtenerImagenSegunCondicion(codigo){
-            const url = "./img/clima/" + codigo + ".jpg"
+        function obtenerImagenSegunCondicion(codigo, esDia){
+            let momento="";
+            if(esDia==0){
+                momento="noche";
+            }
+            else momento="dia";
+            const url = "./img/clima/" + momento + "/" + codigo + ".jpg"
             body.style.backgroundImage="url(" +url+ ")";
             body.style.backgroundSize="cover";
 

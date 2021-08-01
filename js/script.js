@@ -2,7 +2,7 @@ const body = document.body;
 
 
 
-fetch ("http://api.weatherapi.com/v1/current.json?key=30bdfa813d494db085810910212607&q=Cordoba, Argentina&aqi=no&lang=es")
+fetch ("https://api.weatherapi.com/v1/current.json?key=30bdfa813d494db085810910212607&q=Cordoba, Argentina&aqi=no&lang=es")
     .then (response => response.json())
     .then (json => {
         console.log(json);

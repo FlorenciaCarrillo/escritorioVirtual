@@ -91,8 +91,14 @@ fetch(req)
         }
         console.log(listaSlides);
         slideContainer.innerHTML= listaSlides;
-
-        
-
        
     })
+
+    function obtenerTareas(){
+        fetch("/api/tareas")
+        .then (response => response.json())
+        .then (json => {
+            console.log(json);
+
+        })
+    }

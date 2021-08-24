@@ -33,10 +33,20 @@
 
 }
 
+
 #carouselnoticias{
     border-radius: 20px 20px 20px 20px;
     overflow: hidden;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.30);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.30);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.30);
+}
+
+
+.botona {
+    color: #626262 !important;
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: silver !important;
+    opacity: 0.9;
 }

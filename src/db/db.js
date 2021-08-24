@@ -4,8 +4,8 @@ const db = knex({
     connection: {
       host : 'localhost',
       user : 'root',
-      password : 'root',
-      database : 'mydb'
+      password : 'admin',
+      database : 'db_tareas'
     }
 
 })
